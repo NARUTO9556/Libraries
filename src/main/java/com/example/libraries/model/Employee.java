@@ -1,6 +1,11 @@
 package com.example.libraries.model;
 
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.Locale;
 import java.util.Objects;
+
+import static org.apache.commons.lang3.StringUtils.*;
 
 public class Employee {
     private String firstName;
@@ -9,8 +14,8 @@ public class Employee {
     private Integer departmentId;
 
     public Employee(String firstName, String lastName, double salary, Integer departmentId) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.firstName = capitalize(firstName.toLowerCase());
+        this.lastName = capitalize(lastName.toLowerCase());
         this.salary = salary;
         this.departmentId = departmentId;
     }
